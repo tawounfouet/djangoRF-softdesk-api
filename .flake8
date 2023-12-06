@@ -1,0 +1,11 @@
+[flake8]
+max-line-length = 88
+exclude = migrations, __pycache__, manage.py, .git, .env, .vscode
+ignore = E203, W503
+plugins = flake8-html
+
+[pep8]
+max-line-length = 7100
+exclude = migrations, __pycache__, manage.py, .git, .env, .vscode
+ignore = E203, W503
+

@@ -1,0 +1,8 @@
+guide-softdesk-api.md
+.env
+*.pyc
+__pycache__/
+#media/
+#static/
+.env/
+.venv/
