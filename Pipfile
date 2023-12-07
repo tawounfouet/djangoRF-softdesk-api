@@ -8,6 +8,7 @@ django = "*"
 djangorestframework = "*"
 flake8 = "*"
 black = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
