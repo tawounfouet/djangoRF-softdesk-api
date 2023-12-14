@@ -1,6 +1,8 @@
 from django.contrib import admin
-
 from .models import Comment, Issue, Project, Contributor
+
+
+
 
 
 # class ContributorAdmin(admin.ModelAdmin):
@@ -15,7 +17,11 @@ class IssueAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('issue', 'content')
 
-admin.site.register(Contributor)
+
+class ContributorAdmin(admin.ModelAdmin):
+    list_display = ('contributor', 'project', 'is_owner')
+
+admin.site.register(Contributor, ContributorAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Issue, IssueAdmin)
 admin.site.register(Comment, CommentAdmin)
