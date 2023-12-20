@@ -15,17 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 #from rest_framework.routers import DefaultRouter
-from accounts.views import CustomUserViewSet
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework import routers
 from rest_framework_simplejwt.views import (TokenObtainPairView,
                                             TokenRefreshView)
 
-# Ici nous créons notre routeur
-router = routers.SimpleRouter()
-
-router.register('users', CustomUserViewSet, basename='user')
 
 
 
@@ -34,7 +28,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='obtain_tokens'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='refresh_token'),
-    #path("api/", include("SoftDeskAPI.urls")),
-    path('api/', include(router.urls))
+    path('api/accounts/', include('accounts.urls')),
+    path('api/softdesk/', include('SoftDeskAPI.urls'))
     
 ]

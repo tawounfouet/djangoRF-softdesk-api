@@ -19,7 +19,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class ContributorAdmin(admin.ModelAdmin):
-    list_display = ('contributor', 'project', 'is_owner')
+    list_display = ('contributor', 'project')
 
 admin.site.register(Contributor, ContributorAdmin)
 admin.site.register(Project, ProjectAdmin)
