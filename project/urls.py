@@ -30,5 +30,6 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='refresh_token'),
     path('api/accounts/', include('accounts.urls')),
     path('api/softdesk/', include('SoftDeskAPI.urls'))
+    #path('', include('SoftDeskAPI.urls'))
     
 ]

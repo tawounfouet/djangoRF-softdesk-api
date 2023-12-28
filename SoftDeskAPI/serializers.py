@@ -14,14 +14,14 @@ class ContributorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contributor
         #fields = '__all__'
-        fields = ('id', 'contributor', 'project', 'author')
+        fields = ('id', 'contributor', 'project')
 
 
 class IssueSerializer(serializers.ModelSerializer):
     class Meta:
         model = Issue
         #fields = '__all__'
-        fields = ('id', 'project', 'status', 'priority', 'assigned_user', 'tag')
+        fields = ('id', 'project', 'status', 'priority', 'assigned_user', 'tag', 'author')
 
 
 class CommentSerializer(serializers.ModelSerializer):

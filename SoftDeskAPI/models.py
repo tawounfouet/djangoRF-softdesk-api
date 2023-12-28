@@ -55,7 +55,7 @@ class Issue(models.Model):
     tag = models.CharField(max_length=20, choices=TAG_CHOICES, default='bug')
 
     def __str__(self):
-        return f"{self.project.name} - {self.status} - {self.priority}"
+        return f"{self.project.name} - {self.tag} - {self.priority}"
 
 class Comment(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

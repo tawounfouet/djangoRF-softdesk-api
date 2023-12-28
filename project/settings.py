@@ -131,6 +131,21 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 
 REST_FRAMEWORK = {
-    #'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+    # pagination
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 3,
+    # permissions
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',
+                                       "rest_framework.authentication.SessionAuthentication",)
+}
+
+# Django REST framework JSON Web Token Authentication support
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    #'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    # 'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    # 'ROTATE_REFRESH_TOKENS': False,
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }

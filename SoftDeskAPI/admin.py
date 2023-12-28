@@ -12,10 +12,10 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
 
 class IssueAdmin(admin.ModelAdmin):
-    list_display = ('project', 'status', 'priority', 'assigned_user', 'tag')
+    list_display = ('project',  'priority', 'assigned_user', 'tag')
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('issue', 'content')
+    list_display = ('issue', 'content', 'author')
 
 
 class ContributorAdmin(admin.ModelAdmin):
