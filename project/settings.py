@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",  # Django REST framework
     'rest_framework_simplejwt',  # Django REST framework JWT
+    'rest_framework_nested',  # Django REST framework nested routers
     "accounts",
     "SoftDeskAPI",
 ]

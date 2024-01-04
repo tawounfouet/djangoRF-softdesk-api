@@ -22,7 +22,7 @@ class Project(models.Model):
         return self.name
 
 class Contributor(models.Model):
-    contributor = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    contributor = models.ForeignKey(CustomUser, on_delete=models.CASCADE) # faire reférence au user
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='contributor_relationship')
     #is_owner = models.BooleanField(default=False)
 
@@ -31,6 +31,7 @@ class Contributor(models.Model):
 
 class Issue(models.Model):
     STATUS_CHOICES = [
+        # ('new', 'New')
         ('in_progress', 'In Progress'),
         ('resolved', 'Resolved'),
         ('cancelled', 'Cancelled'),
@@ -42,6 +43,7 @@ class Issue(models.Model):
     ]
     TAG_CHOICES = [
         ('bug', 'Bug'),
+        # ('feature', 'Feature')
         ('task', 'Task'),
         ('improvement', 'Improvement'),
     ]
