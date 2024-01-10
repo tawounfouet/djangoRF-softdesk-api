@@ -11,6 +11,8 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
 class ContributorSerializer(serializers.ModelSerializer):
+    # Utilisez le ProjectSerializer pour représenter l'objet Project
+    project = ProjectSerializer()
     class Meta:
         model = Contributor
         #fields = '__all__'
