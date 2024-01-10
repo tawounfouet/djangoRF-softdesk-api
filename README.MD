@@ -13,3 +13,44 @@
 ## Description
 This project is a REST API for a ticketing system. It allows you to create projects, tickets, comments and assign users to them. It also allows you to create users and assign them to projects.
 
+
+
+## Setup Instructions
+
+These instructions will guide you through setting up and running the Softdesk Support API locally on your machine.
+
+### Prerequisites
+
+- [Python](https://www.python.org/) (3.6 or higher)
+- [Pipenv](https://pipenv.pypa.io/en/latest/)
+
+### Clone the Repository and Setup Virtual Environment
+
+```bash
+# Clone the repository
+git clone https://github.com/tawounfouet/djangoRF-softdesk-api.git
+cd djangoRF-softdesk-api
+
+# Install Pipenv if you haven't already
+pip install pipenv
+
+# Create and activate the virtual environment
+pipenv install --dev
+pipenv shell
+
+# Install project dependencies
+pipenv install
+
+# Apply database migrations
+python manage.py migrate
+
+# Create a superuser
+python manage.py createsuperuser
+
+# Start the development server
+python manage.py runserver
+
+# Navigate to http://localhost:8000/api
+  - http://127.0.0.1:8000/api/softdesk/users
+  - http://127.0.0.1:8000/api/softdesk/projects
+```
