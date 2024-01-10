@@ -24,7 +24,7 @@ These instructions will guide you through setting up and running the Softdesk Su
 - [Python](https://www.python.org/) (3.6 or higher)
 - [Pipenv](https://pipenv.pypa.io/en/latest/)
 
-### Clone the Repository and Setup Virtual Environment
+### Clone the Repository and Setup Dev Environment
 
 ```bash
 # Clone the repository
@@ -54,3 +54,6 @@ python manage.py runserver
   - http://127.0.0.1:8000/api/softdesk/users
   - http://127.0.0.1:8000/api/softdesk/projects
 ```
+
+## Auteur
+- [Thomas AWOUNFOUET]()
