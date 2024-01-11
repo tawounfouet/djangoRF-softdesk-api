@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+# Django REST framework JSON Web Token Authentication support
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,8 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",  # Django REST framework
-    'rest_framework_simplejwt',  # Django REST framework JWT
-    'rest_framework_nested',  # Django REST framework nested routers
+    "rest_framework_simplejwt",  # Django REST framework JWT
+    "rest_framework_nested",  # Django REST framework nested routers
     "accounts",
     "SoftDeskAPI",
 ]
@@ -91,7 +93,8 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation.\
+            UserAttributeSimilarityValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
@@ -133,20 +136,20 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 REST_FRAMEWORK = {
     # pagination
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 3,
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 3,
     # permissions
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',
-                                       "rest_framework.authentication.SessionAuthentication",)
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ),
 }
 
-# Django REST framework JSON Web Token Authentication support
-from datetime import timedelta
 
 SIMPLE_JWT = {
-    #'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    # 'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=30),
     # 'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     # 'ROTATE_REFRESH_TOKENS': False,
-    'AUTH_HEADER_TYPES': ('Bearer',),
+    "AUTH_HEADER_TYPES": ("Bearer",),
 }

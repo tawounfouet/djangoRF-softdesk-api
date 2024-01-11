@@ -1,25 +1,23 @@
 from django.contrib import admin
-from .models import Comment, Issue, Project, Contributor
 
+from .models import Comment, Contributor, Issue, Project
 
-
-
-
-# class ContributorAdmin(admin.ModelAdmin):
-#     list_display = ('user', 'projects')
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
+    list_display = ("name", "description")
+
 
 class IssueAdmin(admin.ModelAdmin):
-    list_display = ('project',  'priority', 'assigned_user', 'tag')
+    list_display = ("project", "priority", "assigned_user", "tag")
+
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('issue', 'content', 'author')
+    list_display = ("issue", "content", "author")
 
 
 class ContributorAdmin(admin.ModelAdmin):
-    list_display = ('contributor', 'project')
+    list_display = ("contributor", "project")
+
 
 admin.site.register(Contributor, ContributorAdmin)
 admin.site.register(Project, ProjectAdmin)

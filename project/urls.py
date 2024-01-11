@@ -14,22 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-#from rest_framework.routers import DefaultRouter
+# from rest_framework.routers import DefaultRouter
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework_simplejwt.views import (TokenObtainPairView,
-                                            TokenRefreshView)
-
-
-
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/token/', TokenObtainPairView.as_view(), name='obtain_tokens'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='refresh_token'),
-    path('api/accounts/', include('accounts.urls')),
-    path('api/softdesk/', include('SoftDeskAPI.urls'))
-    #path('', include('SoftDeskAPI.urls'))
-    
+    path("api-auth/", include("rest_framework.urls")),
+    path("api/token/", TokenObtainPairView.as_view(), name="obtain_tokens"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh_token"),
+    path("api/accounts/", include("accounts.urls")),
+    path("api/softdesk/", include("SoftDeskAPI.urls"))
+    # path('', include('SoftDeskAPI.urls'))
 ]
